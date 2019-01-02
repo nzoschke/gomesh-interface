@@ -20,6 +20,7 @@ message User {
   string name = 3;
   string display_name = 4;
   google.protobuf.Timestamp create_time = 5;
+  google.protobuf.Timestamp update_time = 6;
 }
 
 message GetRequest {

@@ -5,15 +5,17 @@
 seconds (Rseconds
 nanos (RnanosB~
 com.google.protobufBTimestampProtoPZ+github.com/golang/protobuf/ptypes/timestampø¢GPBªGoogle.Protobuf.WellKnownTypesbproto3
-œ
-users/v1/users.protogomesh.users.v1google/protobuf/timestamp.proto"¢
+Ù
+users/v1/users.protogomesh.users.v1google/protobuf/timestamp.proto"ß
 User
 id (	Rid
 parent (	Rparent
 name (	Rname!
 display_name (	RdisplayName;
 create_time (2.google.protobuf.TimestampR
-createTime" 
+createTime;
+update_time (2.google.protobuf.TimestampR
+updateTime" 
 
 GetRequest
 name (	Rname"R

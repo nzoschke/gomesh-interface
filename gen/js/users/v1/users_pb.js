@@ -66,7 +66,8 @@ proto.gomesh.users.v1.User.toObject = function(includeInstance, msg) {
     parent: jspb.Message.getFieldWithDefault(msg, 2, ""),
     name: jspb.Message.getFieldWithDefault(msg, 3, ""),
     displayName: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+    createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    updateTime: (f = msg.getUpdateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -123,6 +124,11 @@ proto.gomesh.users.v1.User.deserializeBinaryFromReader = function(msg, reader) {
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setCreateTime(value);
+      break;
+    case 6:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setUpdateTime(value);
       break;
     default:
       reader.skipField();
@@ -185,6 +191,14 @@ proto.gomesh.users.v1.User.serializeBinaryToWriter = function(message, writer) {
   if (f != null) {
     writer.writeMessage(
       5,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getUpdateTime();
+  if (f != null) {
+    writer.writeMessage(
+      6,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
@@ -279,6 +293,36 @@ proto.gomesh.users.v1.User.prototype.clearCreateTime = function() {
  */
 proto.gomesh.users.v1.User.prototype.hasCreateTime = function() {
   return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional google.protobuf.Timestamp update_time = 6;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.gomesh.users.v1.User.prototype.getUpdateTime = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 6));
+};
+
+
+/** @param {?proto.google.protobuf.Timestamp|undefined} value */
+proto.gomesh.users.v1.User.prototype.setUpdateTime = function(value) {
+  jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+proto.gomesh.users.v1.User.prototype.clearUpdateTime = function() {
+  this.setUpdateTime(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.gomesh.users.v1.User.prototype.hasUpdateTime = function() {
+  return jspb.Message.getField(this, 6) != null;
 };
 
 

@@ -22,6 +22,11 @@ export class User extends jspb.Message {
   getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
+  hasUpdateTime(): boolean;
+  clearUpdateTime(): void;
+  getUpdateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): User.AsObject;
   static toObject(includeInstance: boolean, msg: User): User.AsObject;
@@ -39,6 +44,7 @@ export namespace User {
     name: string,
     displayName: string,
     createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 
