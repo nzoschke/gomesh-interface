@@ -191,6 +191,8 @@ func (m *CreateRequest) Validate() error {
 
 	// no validation rules for Parent
 
+	// no validation rules for UserId
+
 	if v, ok := interface{}(m.GetUser()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
 			return CreateRequestValidationError{
