@@ -66,6 +66,9 @@ export class CreateRequest extends jspb.Message {
   getParent(): string;
   setParent(value: string): void;
 
+  getUserId(): string;
+  setUserId(value: string): void;
+
   hasUser(): boolean;
   clearUser(): void;
   getUser(): User | undefined;
@@ -84,6 +87,7 @@ export class CreateRequest extends jspb.Message {
 export namespace CreateRequest {
   export type AsObject = {
     parent: string,
+    userId: string,
     user?: User.AsObject,
   }
 }

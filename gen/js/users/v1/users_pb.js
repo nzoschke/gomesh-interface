@@ -472,6 +472,7 @@ proto.gomesh.users.v1.CreateRequest.prototype.toObject = function(opt_includeIns
 proto.gomesh.users.v1.CreateRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     parent: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    userId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     user: (f = msg.getUser()) && proto.gomesh.users.v1.User.toObject(includeInstance, f)
   };
 
@@ -514,6 +515,10 @@ proto.gomesh.users.v1.CreateRequest.deserializeBinaryFromReader = function(msg, 
       msg.setParent(value);
       break;
     case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUserId(value);
+      break;
+    case 3:
       var value = new proto.gomesh.users.v1.User;
       reader.readMessage(value,proto.gomesh.users.v1.User.deserializeBinaryFromReader);
       msg.setUser(value);
@@ -554,10 +559,17 @@ proto.gomesh.users.v1.CreateRequest.serializeBinaryToWriter = function(message, 
       f
     );
   }
+  f = message.getUserId();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
   f = message.getUser();
   if (f != null) {
     writer.writeMessage(
-      2,
+      3,
       f,
       proto.gomesh.users.v1.User.serializeBinaryToWriter
     );
@@ -581,18 +593,33 @@ proto.gomesh.users.v1.CreateRequest.prototype.setParent = function(value) {
 
 
 /**
- * optional User user = 2;
+ * optional string user_id = 2;
+ * @return {string}
+ */
+proto.gomesh.users.v1.CreateRequest.prototype.getUserId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/** @param {string} value */
+proto.gomesh.users.v1.CreateRequest.prototype.setUserId = function(value) {
+  jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional User user = 3;
  * @return {?proto.gomesh.users.v1.User}
  */
 proto.gomesh.users.v1.CreateRequest.prototype.getUser = function() {
   return /** @type{?proto.gomesh.users.v1.User} */ (
-    jspb.Message.getWrapperField(this, proto.gomesh.users.v1.User, 2));
+    jspb.Message.getWrapperField(this, proto.gomesh.users.v1.User, 3));
 };
 
 
 /** @param {?proto.gomesh.users.v1.User|undefined} value */
 proto.gomesh.users.v1.CreateRequest.prototype.setUser = function(value) {
-  jspb.Message.setWrapperField(this, 2, value);
+  jspb.Message.setWrapperField(this, 3, value);
 };
 
 
@@ -606,7 +633,7 @@ proto.gomesh.users.v1.CreateRequest.prototype.clearUser = function() {
  * @return {!boolean}
  */
 proto.gomesh.users.v1.CreateRequest.prototype.hasUser = function() {
-  return jspb.Message.getField(this, 2) != null;
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
