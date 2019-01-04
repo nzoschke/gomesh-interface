@@ -39,7 +39,7 @@ func (m *User) Reset()         { *m = User{} }
 func (m *User) String() string { return proto.CompactTextString(m) }
 func (*User) ProtoMessage()    {}
 func (*User) Descriptor() ([]byte, []int) {
-	return fileDescriptor_users_52ac4d72540ebedf, []int{0}
+	return fileDescriptor_users_43e3074b09fab6b8, []int{0}
 }
 func (m *User) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_User.Unmarshal(m, b)
@@ -105,7 +105,7 @@ func (m *GetRequest) Reset()         { *m = GetRequest{} }
 func (m *GetRequest) String() string { return proto.CompactTextString(m) }
 func (*GetRequest) ProtoMessage()    {}
 func (*GetRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_users_52ac4d72540ebedf, []int{1}
+	return fileDescriptor_users_43e3074b09fab6b8, []int{1}
 }
 func (m *GetRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetRequest.Unmarshal(m, b)
@@ -145,7 +145,7 @@ func (m *CreateRequest) Reset()         { *m = CreateRequest{} }
 func (m *CreateRequest) String() string { return proto.CompactTextString(m) }
 func (*CreateRequest) ProtoMessage()    {}
 func (*CreateRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_users_52ac4d72540ebedf, []int{2}
+	return fileDescriptor_users_43e3074b09fab6b8, []int{2}
 }
 func (m *CreateRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CreateRequest.Unmarshal(m, b)
@@ -204,7 +204,9 @@ const _ = grpc.SupportPackageIsVersion4
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type UsersClient interface {
+	// Get a user by name
 	Get(ctx context.Context, in *GetRequest, opts ...grpc.CallOption) (*User, error)
+	// Create a user by parent org and user-supplied id
 	Create(ctx context.Context, in *CreateRequest, opts ...grpc.CallOption) (*User, error)
 }
 
@@ -236,7 +238,9 @@ func (c *usersClient) Create(ctx context.Context, in *CreateRequest, opts ...grp
 
 // UsersServer is the server API for Users service.
 type UsersServer interface {
+	// Get a user by name
 	Get(context.Context, *GetRequest) (*User, error)
+	// Create a user by parent org and user-supplied id
 	Create(context.Context, *CreateRequest) (*User, error)
 }
 
@@ -297,9 +301,9 @@ var _Users_serviceDesc = grpc.ServiceDesc{
 	Metadata: "users/v1/users.proto",
 }
 
-func init() { proto.RegisterFile("users/v1/users.proto", fileDescriptor_users_52ac4d72540ebedf) }
+func init() { proto.RegisterFile("users/v1/users.proto", fileDescriptor_users_43e3074b09fab6b8) }
 
-var fileDescriptor_users_52ac4d72540ebedf = []byte{
+var fileDescriptor_users_43e3074b09fab6b8 = []byte{
 	// 322 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x74, 0x90, 0x4d, 0x4b, 0xf3, 0x40,
 	0x14, 0x85, 0x99, 0x36, 0xed, 0xcb, 0x7b, 0xe3, 0x07, 0x8c, 0x5f, 0xa1, 0x82, 0xd6, 0xae, 0xda,
