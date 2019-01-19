@@ -40,8 +40,6 @@ func (m *User) Validate() error {
 		return nil
 	}
 
-	// no validation rules for Id
-
 	// no validation rules for Parent
 
 	// no validation rules for Name

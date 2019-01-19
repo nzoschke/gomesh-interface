@@ -17,7 +17,7 @@ import "widgets/v2/widgets.proto";
 service Users {
   // Get User
   //
-  // Takes User name (with parent Org) in path
+  // Takes parent Org in path
   rpc Get(GetRequest) returns (User) {
     option (google.api.http) = {
       get: "/v2/{name=orgs/*/users/*}"
