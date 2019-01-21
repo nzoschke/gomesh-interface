@@ -19,9 +19,6 @@
     "v1User": {
       "type": "object",
       "properties": {
-        "id": {
-          "type": "string"
-        },
         "parent": {
           "type": "string"
         },

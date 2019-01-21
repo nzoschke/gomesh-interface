@@ -5,9 +5,6 @@ import * as jspb from "google-protobuf";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
 export class User extends jspb.Message {
-  getId(): string;
-  setId(value: string): void;
-
   getParent(): string;
   setParent(value: string): void;
 
@@ -34,7 +31,6 @@ export class User extends jspb.Message {
 
 export namespace User {
   export type AsObject = {
-    id: string,
     parent: string,
     name: string,
     displayName: string,
