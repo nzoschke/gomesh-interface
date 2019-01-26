@@ -62,10 +62,9 @@ proto.gomesh.users.v1.User.prototype.toObject = function(opt_includeInstance) {
  */
 proto.gomesh.users.v1.User.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    parent: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    displayName: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    parent: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    displayName: jspb.Message.getFieldWithDefault(msg, 3, ""),
     createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
@@ -105,21 +104,17 @@ proto.gomesh.users.v1.User.deserializeBinaryFromReader = function(msg, reader) {
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setId(value);
+      msg.setParent(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setParent(value);
+      msg.setName(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
-      break;
-    case 4:
-      var value = /** @type {string} */ (reader.readString());
       msg.setDisplayName(value);
       break;
-    case 5:
+    case 4:
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setCreateTime(value);
@@ -153,38 +148,31 @@ proto.gomesh.users.v1.User.prototype.serializeBinary = function() {
  */
 proto.gomesh.users.v1.User.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getId();
+  f = message.getParent();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = message.getParent();
+  f = message.getName();
   if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
-  f = message.getName();
+  f = message.getDisplayName();
   if (f.length > 0) {
     writer.writeString(
       3,
       f
     );
   }
-  f = message.getDisplayName();
-  if (f.length > 0) {
-    writer.writeString(
-      4,
-      f
-    );
-  }
   f = message.getCreateTime();
   if (f != null) {
     writer.writeMessage(
-      5,
+      4,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
@@ -193,78 +181,63 @@ proto.gomesh.users.v1.User.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional string id = 1;
+ * optional string parent = 1;
  * @return {string}
  */
-proto.gomesh.users.v1.User.prototype.getId = function() {
+proto.gomesh.users.v1.User.prototype.getParent = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /** @param {string} value */
-proto.gomesh.users.v1.User.prototype.setId = function(value) {
+proto.gomesh.users.v1.User.prototype.setParent = function(value) {
   jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional string parent = 2;
+ * optional string name = 2;
  * @return {string}
  */
-proto.gomesh.users.v1.User.prototype.getParent = function() {
+proto.gomesh.users.v1.User.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /** @param {string} value */
-proto.gomesh.users.v1.User.prototype.setParent = function(value) {
+proto.gomesh.users.v1.User.prototype.setName = function(value) {
   jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional string name = 3;
+ * optional string display_name = 3;
  * @return {string}
  */
-proto.gomesh.users.v1.User.prototype.getName = function() {
+proto.gomesh.users.v1.User.prototype.getDisplayName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /** @param {string} value */
-proto.gomesh.users.v1.User.prototype.setName = function(value) {
+proto.gomesh.users.v1.User.prototype.setDisplayName = function(value) {
   jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
 /**
- * optional string display_name = 4;
- * @return {string}
- */
-proto.gomesh.users.v1.User.prototype.getDisplayName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
-};
-
-
-/** @param {string} value */
-proto.gomesh.users.v1.User.prototype.setDisplayName = function(value) {
-  jspb.Message.setProto3StringField(this, 4, value);
-};
-
-
-/**
- * optional google.protobuf.Timestamp create_time = 5;
+ * optional google.protobuf.Timestamp create_time = 4;
  * @return {?proto.google.protobuf.Timestamp}
  */
 proto.gomesh.users.v1.User.prototype.getCreateTime = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 5));
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 4));
 };
 
 
 /** @param {?proto.google.protobuf.Timestamp|undefined} value */
 proto.gomesh.users.v1.User.prototype.setCreateTime = function(value) {
-  jspb.Message.setWrapperField(this, 5, value);
+  jspb.Message.setWrapperField(this, 4, value);
 };
 
 
@@ -278,7 +251,7 @@ proto.gomesh.users.v1.User.prototype.clearCreateTime = function() {
  * @return {!boolean}
  */
 proto.gomesh.users.v1.User.prototype.hasCreateTime = function() {
-  return jspb.Message.getField(this, 5) != null;
+  return jspb.Message.getField(this, 4) != null;
 };
 
 

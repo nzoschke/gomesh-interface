@@ -17,11 +17,10 @@ service Users {
 }
 
 message User {
-  string id = 1;
-  string parent = 2;
-  string name = 3;
-  string display_name = 4;
-  google.protobuf.Timestamp create_time = 5;
+  string parent = 1;
+  string name = 2;
+  string display_name = 3;
+  google.protobuf.Timestamp create_time = 4;
 }
 
 message GetRequest {

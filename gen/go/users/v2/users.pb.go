@@ -44,7 +44,7 @@ func (m *User) Reset()         { *m = User{} }
 func (m *User) String() string { return proto.CompactTextString(m) }
 func (*User) ProtoMessage()    {}
 func (*User) Descriptor() ([]byte, []int) {
-	return fileDescriptor_users_f6dfed791907e29b, []int{0}
+	return fileDescriptor_users_55960e5907b3e1d6, []int{0}
 }
 func (m *User) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_User.Unmarshal(m, b)
@@ -113,7 +113,7 @@ func (m *GetRequest) Reset()         { *m = GetRequest{} }
 func (m *GetRequest) String() string { return proto.CompactTextString(m) }
 func (*GetRequest) ProtoMessage()    {}
 func (*GetRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_users_f6dfed791907e29b, []int{1}
+	return fileDescriptor_users_55960e5907b3e1d6, []int{1}
 }
 func (m *GetRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetRequest.Unmarshal(m, b)
@@ -160,7 +160,7 @@ func (m *CreateRequest) Reset()         { *m = CreateRequest{} }
 func (m *CreateRequest) String() string { return proto.CompactTextString(m) }
 func (*CreateRequest) ProtoMessage()    {}
 func (*CreateRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_users_f6dfed791907e29b, []int{2}
+	return fileDescriptor_users_55960e5907b3e1d6, []int{2}
 }
 func (m *CreateRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CreateRequest.Unmarshal(m, b)
@@ -219,7 +219,7 @@ func (m *UpdateRequest) Reset()         { *m = UpdateRequest{} }
 func (m *UpdateRequest) String() string { return proto.CompactTextString(m) }
 func (*UpdateRequest) ProtoMessage()    {}
 func (*UpdateRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_users_f6dfed791907e29b, []int{3}
+	return fileDescriptor_users_55960e5907b3e1d6, []int{3}
 }
 func (m *UpdateRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_UpdateRequest.Unmarshal(m, b)
@@ -264,7 +264,7 @@ func (m *DeleteRequest) Reset()         { *m = DeleteRequest{} }
 func (m *DeleteRequest) String() string { return proto.CompactTextString(m) }
 func (*DeleteRequest) ProtoMessage()    {}
 func (*DeleteRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_users_f6dfed791907e29b, []int{4}
+	return fileDescriptor_users_55960e5907b3e1d6, []int{4}
 }
 func (m *DeleteRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_DeleteRequest.Unmarshal(m, b)
@@ -304,7 +304,7 @@ func (m *ListRequest) Reset()         { *m = ListRequest{} }
 func (m *ListRequest) String() string { return proto.CompactTextString(m) }
 func (*ListRequest) ProtoMessage()    {}
 func (*ListRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_users_f6dfed791907e29b, []int{5}
+	return fileDescriptor_users_55960e5907b3e1d6, []int{5}
 }
 func (m *ListRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ListRequest.Unmarshal(m, b)
@@ -357,7 +357,7 @@ func (m *ListResponse) Reset()         { *m = ListResponse{} }
 func (m *ListResponse) String() string { return proto.CompactTextString(m) }
 func (*ListResponse) ProtoMessage()    {}
 func (*ListResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_users_f6dfed791907e29b, []int{6}
+	return fileDescriptor_users_55960e5907b3e1d6, []int{6}
 }
 func (m *ListResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ListResponse.Unmarshal(m, b)
@@ -403,7 +403,7 @@ func (m *BatchGetRequest) Reset()         { *m = BatchGetRequest{} }
 func (m *BatchGetRequest) String() string { return proto.CompactTextString(m) }
 func (*BatchGetRequest) ProtoMessage()    {}
 func (*BatchGetRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_users_f6dfed791907e29b, []int{7}
+	return fileDescriptor_users_55960e5907b3e1d6, []int{7}
 }
 func (m *BatchGetRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_BatchGetRequest.Unmarshal(m, b)
@@ -448,7 +448,7 @@ func (m *BatchGetResponse) Reset()         { *m = BatchGetResponse{} }
 func (m *BatchGetResponse) String() string { return proto.CompactTextString(m) }
 func (*BatchGetResponse) ProtoMessage()    {}
 func (*BatchGetResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_users_f6dfed791907e29b, []int{8}
+	return fileDescriptor_users_55960e5907b3e1d6, []int{8}
 }
 func (m *BatchGetResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_BatchGetResponse.Unmarshal(m, b)
@@ -501,7 +501,7 @@ const _ = grpc.SupportPackageIsVersion4
 type UsersClient interface {
 	// Get User
 	//
-	// Takes User name (with parent Org) in path
+	// Takes parent Org in path
 	Get(ctx context.Context, in *GetRequest, opts ...grpc.CallOption) (*User, error)
 	// Create User
 	//
@@ -591,7 +591,7 @@ func (c *usersClient) BatchGet(ctx context.Context, in *BatchGetRequest, opts ..
 type UsersServer interface {
 	// Get User
 	//
-	// Takes User name (with parent Org) in path
+	// Takes parent Org in path
 	Get(context.Context, *GetRequest) (*User, error)
 	// Create User
 	//
@@ -760,9 +760,9 @@ var _Users_serviceDesc = grpc.ServiceDesc{
 	Metadata: "users/v2/users.proto",
 }
 
-func init() { proto.RegisterFile("users/v2/users.proto", fileDescriptor_users_f6dfed791907e29b) }
+func init() { proto.RegisterFile("users/v2/users.proto", fileDescriptor_users_55960e5907b3e1d6) }
 
-var fileDescriptor_users_f6dfed791907e29b = []byte{
+var fileDescriptor_users_55960e5907b3e1d6 = []byte{
 	// 801 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x9c, 0x54, 0xcb, 0x4e, 0x1b, 0x49,
 	0x14, 0x55, 0xfb, 0x05, 0x5c, 0xe3, 0x01, 0x15, 0x8f, 0x69, 0xda, 0x3c, 0x4c, 0x63, 0x21, 0x63,

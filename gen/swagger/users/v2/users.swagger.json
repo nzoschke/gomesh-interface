@@ -18,7 +18,7 @@
     "/v2/{name=orgs/*/users/*}": {
       "get": {
         "summary": "Get User",
-        "description": "Takes User name (with parent Org) in path",
+        "description": "Takes parent Org in path",
         "operationId": "Get",
         "responses": {
           "200": {
